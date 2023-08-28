@@ -1,0 +1,20 @@
+.background {
+    background: #f1f1f1;
+    height: 700px;
+    border: 2px solid black;
+    border-radius: 25px 0px 0px 25px;
+    margin: 10px;
+    overflow: auto;
+}
+
+.inside-element {
+    background: rgb(255, 164, 122);
+    height: 200px;
+    width: 200px;
+    display: inline-block;
+    border-radius: 12px;
+    margin: 40px;
+    padding: 20px;
+    font-size: 20px;
+    overflow: hidden;
+}
