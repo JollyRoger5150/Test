@@ -1,0 +1,111 @@
+@font-face {
+  font-family: 'Rubik';
+  src: url('../fonts/Rubik-Regular.woff') format('woff'),
+      url('../fonts/Rubik-Regular.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+body {
+  font-family: "Rubik" ;
+  font-size: 200%;
+  color: aliceblue;
+  background-color: #202020;
+}
+
+.elements {
+  display: flex;
+  height:  100px;
+  justify-content: right;
+}
+
+.element1 {
+    border: 2px solid white;
+    background-color: azure;
+    width: 800px;
+    height: 100px;
+    border-radius: 10px;
+    position: fixed;
+    right: 50px;
+    left: 50%;
+    bottom: 100px;
+}
+
+.element2 {
+    border: 2px solid rgb(245, 44, 44);
+    height: 100px;
+    width: 100px;
+    border-radius: 100%;
+    background-color: #ff0000;
+    position: fixed;
+    bottom: 150px;
+    right: 700px;
+}
+
+.wrapper {
+  padding: 30px;
+  max-width: 1200px;
+  
+  display: flex;
+}
+
+.quads {
+  flex: 0 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.quads__quad {
+  width: 200px;
+  height: 200px;
+  background: #757272;
+  border-radius: 5px;
+}
+
+.quads__quad--red {
+  background: linear-gradient(130deg, rgb(252, 67, 67), rgb(215, 106, 47));
+}
+.quads__quad--green {
+  background: linear-gradient(130deg, rgb(25, 186, 38), rgb(47, 215, 167));
+}
+.quads__quad--blue {
+  background: linear-gradient(130deg, rgb(33, 25, 186), rgb(160, 44, 193));
+}
+
+.area {
+  flex: 1 0 auto;
+  border: 5px dashed #333;
+  height: 800px;
+}
+
+.area__place {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: sans-serif;
+  font-weight: 900;
+  width: 200px;
+  height: 200px;
+  pointer-events: none;
+  border-radius: 5px;
+  border: 5px dashed #8f8787;
+  color: #8f8787;
+}
+
+
+/*--------------Реализация ДЗ-----------*/
+
+
+.quads__quad--red {
+  transform: translate(550px,600px);
+}
+.quads__quad--green {
+  transform-origin: 80% 20%;
+  transform: translateX(500px) translateY(100px) rotate(130deg);
+}
+
+.quads__quad--blue {
+  transform-origin: 100% 0%;
+  transform: translate(640px,-100px)scale(-1.5);
+}
