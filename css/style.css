@@ -51,7 +51,7 @@
 }
 
 .header {
-    background: url(./images/header-bg.png) 50% 100% / cover no-repeat;
+    background: url("../images/header-bg.png") 50% 100% / cover no-repeat;
 }
 
 .header__top {
