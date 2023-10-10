@@ -1,3 +1,4 @@
+
 (function(){
     document.addEventListener ('click', BurgerInit)
     function BurgerInit(e) {
@@ -16,4 +17,26 @@
         }
         
     }
+
+    const modal = document.querySelector ('.modal')
+    const modalButton = document.querySelector('.about__modal--open')
+
+    modalButton.addEventListener ('click', openModal)
+    modal.addEventListener ('click', closeModal)
+
+    function openModal(e) {
+        e.preventDefault()
+        document.body.classList.toggle('modal__open')
+    }
+
+    function closeModal (e) {
+        e.preventDefault()
+
+        const target = e.target
+        
+        if (target.closest('.modal__close-btn') || target.classList.contains('modal')) {
+            document.body.classList.remove('modal__open')
+        }
+    }
+    
 }) ()
