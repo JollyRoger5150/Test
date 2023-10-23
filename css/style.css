@@ -1481,7 +1481,13 @@ html {
     text-decoration: underline;
 }
 
-.button {}
+.form__button {
+    color:  #312C27;
+font-size: 16px;
+font-style: normal;
+font-weight: 500;
+line-height: 160%; 
+}
 
 
 
