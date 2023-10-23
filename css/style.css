@@ -1301,7 +1301,7 @@ html {
 }
 
 .application {
-    background: url(/images/footer-bg.png) 50% 100% / cover no-repeat;
+    background: url(./images/footer-bg.png) 50% 100% / cover no-repeat;
 }
 
 .application__wrapper {
@@ -1315,13 +1315,13 @@ html {
 }
 
 .application__wrapper::before {
-    content: url(/images/decor/berry2.png);
+    content: url(./images/decor/berry2.png);
     position: absolute;
     top: 70px;
 }
 
 .application__wrapper::after {
-    content: url(/images/decor/berry1.png);
+    content: url(./images/decor/berry1.png);
     position: absolute;
     top: 70px;
     right: 10%;
@@ -1448,7 +1448,7 @@ html {
     border: 1.5px solid #FFA55C;
 }
 .checkbox:checked::before{
-    content: url(/images/icons/jam_check.svg);
+    content: url(./images/icons/jam_check.svg);
 
 }
 
