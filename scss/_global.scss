@@ -1,0 +1,19 @@
+body {
+    
+}
+
+.body__wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+    width: 100%;
+    overflow-x: hidden;
+}
+
+.container {
+    max-width: 1180px;
+    margin: 0 auto;
+    
+    padding-left: 15px;
+    padding-right: 15px;
+}
