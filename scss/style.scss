@@ -805,7 +805,8 @@
 }
 
 .popular__link {
-    margin-top: 200px;
+    margin-top: 100px;
+    margin-bottom: 50px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -814,6 +815,15 @@
 .blog {
     background: #F3F5F4;
     padding-top: 80px;
+    .button {
+        white-space: nowrap;
+        color: #FDFDFD;
+        max-width: 244px;
+        text-align: center;
+    }
+    .button:hover {
+        color: #1A3E3E;
+    }
 }
 
 .blog__inner {

@@ -781,8 +781,15 @@
   background: #F3F5F4;
   padding-top: 80px;
 }
-
-.blo
+.blog .button {
+  white-space: nowrap;
+  color: #FDFDFD;
+  max-width: 244px;
+  text-align: center;
+}
+.blog .button:hover {
+  color: #1A3E3E;
+}
 
 .blog__inner {
   display: flex;
