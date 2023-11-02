@@ -4,11 +4,11 @@
     function BurgerInit(e) {
         const target = e.target
         const burgerIcon = target.closest('.burger-icon')
-        const BurgerLink = target.closest('.header__nav--link')
+        const BurgerLink = target.closest('.header-nav__item')
 
         if (!burgerIcon && !BurgerLink) return
 
-        if (document.documentElement.clientWidth > 900) return
+        if (document.documentElement.clientWidth > 1030) return
 
         if (!document.body.classList.contains('body--opened--menu')) {
             document.body.classList.add('body--opened--menu')
@@ -18,142 +18,136 @@
 
     }
 
-    const modal = document.querySelector('.modal')
-    const modalButton = document.querySelector('.about__modal--open')
-
-    modalButton.addEventListener('click', openModal)
-    modal.addEventListener('click', closeModal)
-
-    function openModal(e) {
-        e.preventDefault()
-        document.body.classList.toggle('modal__open')
-    }
-
-    function closeModal(e) {
-        e.preventDefault()
-
-        const target = e.target
-
-        if (target.closest('.modal__close-btn') || target.classList.contains('modal')) {
-            document.body.classList.remove('modal__open')
-        }
-    }
-
-    const tabControls = document.querySelector('.tab-control')
-
-    tabControls.addEventListener('click', toggleTab)
-
-    function toggleTab(e) {
-        const tabControl = e.target.closest('.tab-control__link')
-
-        if (!tabControl) return
-        e.preventDefault()
-        if (tabControl.classList.contains('tab-control__link--active')) return
-
-        const tabContentID = tabControl.getAttribute('href')
-
-        document.querySelector('.tab-content--show').classList.remove('tab-content--show')
-        document.querySelector(tabContentID).classList.add('tab-content--show')
-
-        document.querySelector('.tab-control__link--active').classList.remove('tab-control__link--active')
-        tabControl.classList.add('tab-control__link--active')
-    }
-
-    const accordionLists = document.querySelectorAll('.accordion-list')
-    accordionLists.forEach(eL => {
-
-        eL.addEventListener('click', (e) => {
-
-            const accordionControl = e.target.closest('.accordion-list__control')
-            if (!accordionControl) return
-            const accordionItem = accordionControl.parentElement;
-            const accordionContent = accordionControl.nextElementSibling;
-
-            accordionItem.classList.toggle('accordion-list__item--opened')
-
-            if (accordionItem.classList.contains('accordion-list__item--opened')) {
-                accordionContent.style.maxHeight = accordionContent.scrollHeight + 'px';
-            } else {
-                accordionContent.style.maxHeight = null;
-            }
-        });
+    const picker = new DateRangePicker('#daterange', {
+        // options
     });
 
-    const gallerySwiper = new Swiper('.galerry__slider', {
-        spaceBetween: 32,
-        slidesPerView: 4,
+    const choiceLocation = document.querySelector(".location-select")
+    const choicesLocation = new Choices(choiceLocation)
 
-        // If we need pagination
-        pagination: {
-            el: '.gallery__pagination',
-            type: 'fraction',
-        },
 
-        // Navigation arrows
-        navigation: {
-            nextEl: '.gallery__next',
-            prevEl: '.gallery__prev',
-        },
+    const choiceAmount = document.querySelector(".people-amount")
+    const choicesAmount = new Choices(choiceAmount)
+
+    const popularSwiper = new Swiper('.popular__swiper', {
+        // Optional parameters
+        direction: 'horizontal',
+        loop: false,
+        spaceBetween: 30,
+        slidesPerView: 3,
+        centeredSlides: true,
 
         breakpoints: {
 
             320: {
+                spaceBetween: 15,
                 slidesPerView: 1,
-                spaceBetween: 20
+            },
+            412: {
+                spaceBetween: 15,
+                slidesPerView: 1.2,
             },
             450: {
-                slidesPerView: 2,
-                spaceBetween: 20
+                spaceBetween: 15,
+                slidesPerView: 1.3,
+            },
+            500: {
+                spaceBetween: 15,
+                slidesPerView: 1.4,
             },
             // when window width is >= 480px
+            600: {
+                spaceBetween: 15,
+                slidesPerView: 1.6,
+            },
+            700: {
+                spaceBetween: 15,
+                slidesPerView: 1.8,
+            },
             800: {
-                slidesPerView: 3,
-                spaceBetween: 30
+                spaceBetween: 15,
+                slidesPerView: 2.1,
             },
             900: {
-                slidesPerView: 3,
-                spaceBetween: 32
+                spaceBetween: 30,
+                slidesPerView: 2.2,
             },
             1000: {
-                slidesPerView: 4,
-                spaceBetween: 32
+                spaceBetween: 30,
+                slidesPerView: 2.6,
             },
-            1200: {
-                slidesPerView: 4,
-                spaceBetween: 32
+            1170: {
+                spaceBetween: 30,
+                slidesPerView: 3,
             },
-            1400: {
-                slidesPerView: 4,
-                spaceBetween: 32
-            },
-            // when window width is >= 640px
 
         }
+
     });
-
-    const testimonialsSwiper = new Swiper('.testimonials__swiper', {
-        spaceBetween: 10,
-        slidesPerView: 2.037,
-        centeredSlides: true,
-
-        // Navigation arrows
-        navigation: {
-            nextEl: '.testimonials__next',
-            prevEl: '.testimonials__prev',
-        },
-
-        scrollbar: {
-            el: '.testimonials__scrollbar',
-            draggable: false,
-        },
-        
-        
-    });
-
-    const telInputs = document.querySelectorAll('input[type="tel"]')
-
-    const im = new Inputmask ('+7 (999) 999-99-99');
-    im.mask(telInputs);
 
 
 })()
+
+const blogSwiper = new Swiper(".blog__swiper", {
+    slidesPerView: 1,
+
+    enabled: true,
+    spaceBetween: 50,
+
+    breakpoints: {
+        320: {
+            init: true,
+            spaceBetween: 5,
+            slidesPerView: 3,
+            enabled: true,
+            centeredSlides: true,
+
+        },
+
+        548: {
+            spaceBetween: 15,
+            slidesPerView: 2.59,
+            enabled: true,
+            centeredSlides: true,
+
+        },
+        644: {
+            spaceBetween: 15,
+            slidesPerView: 2,
+            enabled: true,
+
+        },
+        651: {
+            spaceBetween: 15,
+            slidesPerView: 3,
+            enabled: false,
+
+        },
+        1358: {
+            spaceBetween: 15,
+            slidesPerView: 2,
+            enabled: false,
+
+        },
+
+
+    }
+
+
+
+
+});
+
+function sliderDecoratorUpdateSlidesSize(func) {
+    return function () {
+        func.apply(this, arguments);
+
+        var min = 0;
+        var max = slider.virtualSize - slider.width;
+        _.each(slider.snapGrid, function (val, i, list) {
+            if (val < min) list[i] = min;
+            else if (val > max) list[i] = max;
+            else list[i] = Math.round(val);
+        });
+    };
+}
