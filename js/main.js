@@ -92,13 +92,13 @@ const blogSwiper = new Swiper(".blog__swiper", {
     slidesPerView: 1,
 
     enabled: true,
-    spaceBetween: 50,
+    spaceBetween: 0,
 
     breakpoints: {
         320: {
             init: true,
-            spaceBetween: 5,
-            slidesPerView: 3,
+            spaceBetween: 15,
+            slidesPerView: 'auto',
             enabled: true,
             centeredSlides: true,
 
@@ -106,19 +106,19 @@ const blogSwiper = new Swiper(".blog__swiper", {
 
         548: {
             spaceBetween: 15,
-            slidesPerView: 2.59,
+            slidesPerView: 'auto',
             enabled: true,
             centeredSlides: true,
 
         },
         644: {
             spaceBetween: 15,
-            slidesPerView: 2,
+            slidesPerView: 'auto',
             enabled: true,
-
+            centeredSlides: true,
         },
         651: {
-            spaceBetween: 15,
+            spaceBetween: 0,
             slidesPerView: 3,
             enabled: false,
 
