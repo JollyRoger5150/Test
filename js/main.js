@@ -18,6 +18,7 @@
 
     }
 
+
     const picker = new DateRangePicker('#daterange', {
         // options
     });
@@ -85,6 +86,17 @@
 
     });
 
+    
+
+    const gallerySwiper = new Swiper(".gallery__swiper", {
+        slidesPerView: 'auto',
+        enabled: true,
+        spaceBetween: 20,
+        centeredSlides: true,
+
+        
+    });
+
 
 })()
 
@@ -133,21 +145,4 @@ const blogSwiper = new Swiper(".blog__swiper", {
 
     }
 
-
-
-
 });
-
-function sliderDecoratorUpdateSlidesSize(func) {
-    return function () {
-        func.apply(this, arguments);
-
-        var min = 0;
-        var max = slider.virtualSize - slider.width;
-        _.each(slider.snapGrid, function (val, i, list) {
-            if (val < min) list[i] = min;
-            else if (val > max) list[i] = max;
-            else list[i] = Math.round(val);
-        });
-    };
-}
