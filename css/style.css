@@ -180,6 +180,9 @@ html {
   justify-content: space-between;
   align-items: flex-start;
 }
+.form__wrapper .form__submit:hover {
+  cursor: url("../images/icons/pointer.svg"), auto;
+}
 .form__wrapper .form__submit {
   color: #1A3E3E;
   padding: 12px 24px;
@@ -955,6 +958,31 @@ html {
 
 .gallery__grid img {
   width: 100%;
+  position: relative;
+}
+
+.gallery__item {
+  position: relative;
+}
+
+.gallery__item:hover {
+  cursor: url("../images/icons/pointer.svg"), auto;
+}
+
+.gallery__item svg {
+  position: absolute;
+  bottom: -600%;
+  left: 47%;
+  opacity: 0;
+  transition: all 0.5s;
+}
+
+.gallery__item:hover svg {
+  position: absolute;
+  bottom: -600%;
+  left: 47%;
+  transform: scale(150%);
+  opacity: 1;
 }
 
 .gallery__grid {
@@ -968,6 +996,7 @@ html {
 .gallery__pic1 {
   grid-area: 1/1/2/3;
 }
+
 .gallery__pic2 {
   grid-area: 1/3/2/4;
 }
@@ -1111,6 +1140,12 @@ html {
   max-width: 280px;
   max-height: 44px;
   padding: 0 16px;
+  color: #18121E;
+  font-family: "Nunito Sans";
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 18px;
 }
 
 .footer-form__title {
@@ -1412,6 +1447,9 @@ html {
     position: relative;
     text-align: center;
   }
+  .about__demo {
+    margin-left: -150px;
+  }
   .about__info {
     margin-bottom: 0px !important;
   }
@@ -1529,6 +1567,9 @@ html {
   .about__image {
     display: block;
   }
+  .about__demo {
+    margin-left: 0px;
+  }
   .about__video {
     position: absolute;
     top: 0px !important;
@@ -1543,6 +1584,18 @@ html {
     display: flex !important;
     flex-direction: row;
     margin-left: -24%;
+    align-items: stretch !important;
+  }
+  .blog__slide {
+    display: flex;
+    flex-direction: column;
+    padding: 16px;
+    flex-shrink: 1;
+    max-width: 285px;
+    height: 100%;
+    width: 100% !important;
+    background: #FDFDFD;
+    border-radius: 10px;
   }
 }
 @media (max-width: 645px) {
@@ -1602,7 +1655,7 @@ html {
 }
 @media (max-width: 400px) {
   .blog__wrapper {
-    margin-left: -19%;
+    margin-left: -40% !important;
   }
 }
 @media (max-width: 372px) {
@@ -1615,6 +1668,11 @@ html {
   }
   .blog__wrapper {
     margin-left: -54%;
+  }
+}
+@media (max-width: 344px) {
+  .blog__wrapper {
+    margin-left: -37% !important;
   }
 }
 @media (max-width: 400px) {

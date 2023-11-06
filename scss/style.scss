@@ -164,6 +164,9 @@
         align-items: flex-start;
     }
 
+    .form__submit:hover {
+        cursor: url('../images/icons/pointer.svg'), auto;
+    }
     .form__submit {
         color: #1A3E3E;
         padding: 12px 24px;
@@ -891,7 +894,7 @@
         flex-direction: row;
         gap: 24px;
         padding: 16px;
-        max-width: 580px;
+        max-width: 580px ;
         background: #FDFDFD;
         border-radius: 10px;
     }
@@ -910,7 +913,7 @@
         color: #1A3E3E;
         cursor: url('../images/icons/pointer.svg'), auto;
         transition: all .4s;
-    }
+}
 
     .slider__title {
         color: #18121E;
@@ -919,7 +922,7 @@
         font-style: normal;
         font-weight: 700;
         line-height: 32px;
-    }
+}
 
     .slider__text {
         overflow: hidden;
@@ -1006,7 +1009,32 @@
 
 .gallery__grid img {
     width: 100%;
+    position: relative;
 }
+
+.gallery__item {
+    position: relative;
+}
+.gallery__item:hover {
+    cursor: url('../images/icons/pointer.svg'), auto;
+}
+
+.gallery__item svg {
+    position: absolute;
+    bottom: -600%;
+    left: 47%;
+    opacity: 0;
+    transition: all .5s;
+}
+.gallery__item:hover svg {
+    position: absolute;
+    bottom: -600%;
+    left: 47%;
+    transform: scale(150%);
+    opacity: 1;
+}
+
+
 
 .gallery__grid {
     display: grid;
@@ -1016,12 +1044,8 @@
     grid-row-gap: 20px;
 }
 
-
 .gallery__pic1 {
     grid-area: 1 / 1 / 2 / 3;
-    a {
-        
-    }
 }
 
 .gallery__pic2 {
@@ -1175,6 +1199,12 @@
         max-width: 280px;
         max-height: 44px;
         padding: 0 16px;
+        color: #18121E;
+        font-family: 'Nunito Sans';
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 18px;
     }
 }
 
