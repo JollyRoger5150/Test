@@ -108,8 +108,8 @@
         content: url(../images/icons/arrow-down.svg);
         display: block;
         transform: rotate(-90deg) scale(150%);
-        padding-left: 30px;
-        margin-top: 39px;
+        padding-left: 20px;
+        margin-top: 26px;
     }
 
     .header-nav__item::before:hover path {
@@ -136,10 +136,14 @@
         display: none;
     }
 
+    .body--opened--menu {
+        overflow: hidden;
+    }
     .body--opened--menu .header__nav-bar {
         transform: translateY(0%);
         opacity: 1;
         visibility: visible;
+        
     }
 
     .body--opened--menu .burger-icon div::before {
@@ -460,6 +464,13 @@
     }
 }
 
+@media (max-width: 400px) {
+    .blog__wrapper {
+        margin-left: -275px;
+
+    }
+}
+
 
 @media (max-width: 372px) {
     .popular__swiper-slide {
@@ -483,9 +494,9 @@
 
     }
 }
-@media (max-width: 400px) {
-    .blog__wrapper {
-        margin-left: -275px;
 
+@media (max-width: 336px) {
+    .header__title {
+        font-size: 20px !important;
     }
 }

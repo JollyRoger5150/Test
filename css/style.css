@@ -11,7 +11,7 @@ body {
 
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 0vh;
+  scroll-margin-top: 7px;
 }
 
 .body__wrapper {
@@ -59,13 +59,14 @@ html {
   flex-direction: row;
   gap: 37px;
   align-items: center;
+  padding-left: 40px;
 }
 .header-nav .header-nav__item {
   white-space: nowrap;
   transition: all 0.4s;
   position: relative;
 }
-.header-nav .header-nav__item::before {
+.header-nav .header-nav__item::after {
   content: "";
   display: block;
   width: 100%;
@@ -78,7 +79,7 @@ html {
   opacity: 0;
   transform: translateX(-100%);
 }
-.header-nav .header-nav__item:hover::before {
+.header-nav .header-nav__item:hover::after {
   opacity: 1;
   transform: translateX(0%);
 }
@@ -137,19 +138,19 @@ html {
   padding: 12px 24px;
   border-radius: 4px;
   max-width: 157px;
-  width: 100%;
   font-family: "Nunito Sans";
   font-size: 16px;
   font-style: normal;
   font-weight: 600;
   line-height: 20px;
+  white-space: nowrap;
   transition: all 0.7s;
   letter-spacing: 0.192px;
+  border: 2px solid #1A3E3E;
 }
 
 .button:hover {
-  border-radius: 4px;
-  border: 1px solid #1A3E3E;
+  border: 2px solid #1A3E3E;
   color: #1A3E3E;
   background: #FDFDFD;
   cursor: url("../images/icons/pointer.svg"), auto;
@@ -1375,8 +1376,8 @@ html {
     content: url(../images/icons/arrow-down.svg);
     display: block;
     transform: rotate(-90deg) scale(150%);
-    padding-left: 30px;
-    margin-top: 39px;
+    padding-left: 20px;
+    margin-top: 26px;
   }
   .header-nav__item::before:hover path {
     fill: #F2BE22;
@@ -1398,6 +1399,9 @@ html {
   }
   .header__nav-bar .button {
     display: none;
+  }
+  .body--opened--menu {
+    overflow: hidden;
   }
   .body--opened--menu .header__nav-bar {
     transform: translateY(0%);
@@ -1658,6 +1662,11 @@ html {
     margin-left: -40% !important;
   }
 }
+@media (max-width: 400px) {
+  .blog__wrapper {
+    margin-left: -275px;
+  }
+}
 @media (max-width: 372px) {
   .popular__swiper-slide {
     transform: scale(70%) !important;
@@ -1675,8 +1684,8 @@ html {
     margin-left: -37% !important;
   }
 }
-@media (max-width: 400px) {
-  .blog__wrapper {
-    margin-left: -275px;
+@media (max-width: 336px) {
+  .header__title {
+    font-size: 20px !important;
   }
 }/*# sourceMappingURL=style.css.map */
